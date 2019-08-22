@@ -1,0 +1,64 @@
+/**
+ * Created by Ibrahim Sagar on 23/08/2019.
+ */
+public class RobotTest {
+
+        public static void main(String[] args)
+        {
+            Robot r1= new Robot("Tom","Blue",30);
+            Robot r2 = new Robot("Jerry","Red",40);
+
+            r1.introduceSelf();
+            r2.introduceSelf();
+
+            person p1 =new person("Alice","aggressive",false);
+            person p2 = new person("Becky","talkative",true);
+
+            p1.robotOwned=r2;
+            p2.robotOwned=r1;
+
+            p1.robotOwned.introduceSelf();
+            p2.robotOwned.introduceSelf();
+        }
+    }
+
+    class Robot {
+        String name;
+        String color;
+        int weight;
+
+        Robot(String n,String c, int w)
+        {
+            this.name = n;
+            this.color = c;
+            this.weight =w;
+        }
+
+        void introduceSelf()
+        {
+            System.out.println("My name is " + this.name);
+
+        }
+    }
+
+    class person {
+        String name;
+        String personality;
+        boolean isSitting;
+        Robot robotOwned;
+
+        person(String n, String p,boolean i) {
+            this.name = n;
+            this.personality = p;
+            this.isSitting = i;
+        }
+        void sitDown(){
+            this.isSitting = true;
+        }
+        void standUp(){
+            this.isSitting = false;
+        }
+    }
+
+
+
